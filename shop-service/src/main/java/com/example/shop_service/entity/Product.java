@@ -1,5 +1,5 @@
 
-package entity;
+package com.example.shop_service.entity;
 
 import jakarta.persistence.*;
 
