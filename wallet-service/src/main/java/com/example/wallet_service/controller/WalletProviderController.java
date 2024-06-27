@@ -20,5 +20,10 @@ public class WalletProviderController {
     public Integer checkWallet(@RequestParam String mobileNumber, @RequestParam String nationalID) {
         return walletProviderService.checkWalletExist(mobileNumber, nationalID);
     }
+    @GetMapping("/showMyLoginPage")
+    public String showMyLoginPage() {
+
+        return "plain-login";
+    }
 
 }

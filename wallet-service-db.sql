@@ -44,6 +44,13 @@ CREATE TABLE transactions (
   id INT AUTO_INCREMENT PRIMARY KEY,
   wallet_id INT NOT NULL,
   amount DECIMAL(10, 2) NOT NULL,
-  type ENUM('DEPOSIT', 'WITHDRAWAL') NOT NULL,
+  transactionType ENUM('DEPOSIT', 'WITHDRAWAL') NOT NULL,
   FOREIGN KEY (`wallet_id`) REFERENCES `wallet`(`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `roles` (
+  `user_id` INT NOT NULL,
+  `role` varchar(50) NOT NULL,
+  UNIQUE KEY `authorities5_idx_1` (`user_id`,`role`),
+  CONSTRAINT `authorities5_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
